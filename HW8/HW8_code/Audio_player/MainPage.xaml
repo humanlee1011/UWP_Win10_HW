@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="Audio_player.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Audio_player"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid x:Name="GridView">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <MediaPlayerElement x:Name="_mediaPlayerElement"  HorizontalAlignment="Stretch" Grid.Row="0" />
+            <Ellipse x:Name="ellipse" Height="200" Width="200" HorizontalAlignment="Center" Margin="0,100,0,0">
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="image" ImageSource="Assets/background.jpg" />
+                </Ellipse.Fill>
+            </Ellipse>
+            <Grid Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,0,50" Grid.RowSpan="2">
+             
+                <StackPanel>
+
+                    <TextBlock x:Name="cur_time" Text="0:00" />
+                    <Slider x:Name="_positionSlider"  VerticalAlignment="Stretch" ValueChanged="_positionslider_valuechanged"/>
+                    <TextBlock x:Name="total_time" Text="0:00" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" VerticalAlignment="Bottom">
+                <RelativePanel HorizontalAlignment="Center">
+                    <AppBarButton x:Name="PlayButton" Icon="Play" Label="播放" Click="PlayButton_Click"/>
+                    <AppBarButton x:Name="PauseButton" Icon="Pause" Label="暂停" Click="PauseButton_Click" RelativePanel.RightOf="PlayButton"/>
+                    <AppBarButton x:Name="StopButton" Icon="Stop" Label="停止" Click="StopButton_Click" RelativePanel.RightOf="PauseButton"/>
+                    <AppBarButton x:Name="VolumeButton" Icon="Volume"  RelativePanel.RightOf="StopButton"/>
+                    <Slider x:Name="volumeSlider" ValueChanged="volumeSlider_ValueChanged" Width="100" RelativePanel.RightOf="VolumeButton" Margin="0,6,0,0"/>
+                    <AppBarButton x:Name="SelectAudioButton" Label="打开文件" Icon="MusicInfo" Click="SelectAudioButton_Click"  RelativePanel.RightOf="volumeSlider"/>
+                    <AppBarButton x:Name="FullScreenButton" Icon="FullScreen" Label="全屏" Click="FullScreenToggle" RelativePanel.RightOf="SelectAudioButton"/>
+
+                </RelativePanel>
+
+            </Grid>
+        </Grid>
+    </Grid>
+    <!--<Page.BottomAppBar>-->
+    <!--<CommandBar>
+            <AppBarButton x:Name="PlayButton" Icon="Play" Label="播放" Click="PlayButton_Click"/>
+            <AppBarButton x:Name="PauseButton" Icon="Pause" Label="暂停" Click="PauseButton_Click" />
+            <AppBarButton x:Name="StopButton" Icon="Stop" Label="停止" Click="StopButton_Click" />
+            <AppBarButton x:Name="SelectAudioButton" Label="打开文件" Icon="MusicInfo" Click="SelectAudioButton_Click" />
+            <AppBarButton x:Name="FullScreenButton" Icon="FullScreen" Label="全屏" Click="FullScreenButton_Click" />
+            <AppBarButton Icon="Volume" IsCompact="True">
+                <FlyoutBase.AttachedFlyout>
+                    <Flyout>
+                        <Slider x:Name="volumeSlider" Header="Volume" Width="200" ValueChanged="volumeSlider_ValueChanged"/>
+                    </Flyout>
+                </FlyoutBase.AttachedFlyout>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <MediaPlayerElement x:Name="_mediaPlayerElement" AreTransportControlsEnabled="False" HorizontalAlignment="Stretch" Grid.Row="0" />
+        <Slider x:Name="_positionSlider" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,40" />
+    </Grid>-->
+</Page>

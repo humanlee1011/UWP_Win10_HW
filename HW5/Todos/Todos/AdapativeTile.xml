@@ -1,0 +1,46 @@
+﻿
+<tile>
+  <visual>
+
+    <binding template='TileSmall' branding='none'>
+      <image src='Assets\Tile_Background_4444Logo.png' placement='background' />
+      <group>
+        <subgroup hint-weight='40'>
+          <text hint-style='subtitle'>{0}</text>
+          <text hint-style='captionsubtle' hint-wrap='true'>{1}</text>
+        </subgroup>
+      </group>
+    </binding>
+    
+    <binding template='TileMedium' branding='name'>
+      <image src='Assets\Tile_Background_300300Logo.png' placement='background' />
+      <group>
+        <subgroup hint-weight='40'>
+          <text hint-style='subtitle'>{0}</text>
+          <text hint-style='captionsubtle' hint-wrap='true'>{1}</text>
+        </subgroup>
+      </group>
+    </binding>
+
+    <binding template='TileWide' branding='nameAndLogo'>
+      <image src='Assets\Tile_Background_620300Logo.png' placement='background' />
+      <group>
+        <subgroup hint-weight='45'>
+          <text hint-style='subtitle'>{0}</text>
+          <text hint-style='captionsubtle' hint-wrap='true'>{1}</text>
+        </subgroup>
+      </group>
+    </binding>
+
+    <binding template='TileLarge' branding='nameAndLogo'>
+      <image src='Assets\Tile_Background_300300Logo.png' placement='background' />
+      <group>
+        <subgroup hint-weight='45'>
+          <text hint-style='subtitle'>{0}</text>
+          <text hint-style='captionsubtle' hint-wrap='true'>{1}</text>
+        </subgroup>
+      </group>
+    </binding>
+
+  </visual>
+</tile>
